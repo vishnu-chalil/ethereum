@@ -7,14 +7,14 @@ var app = express();
 var fs = require("fs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var url = "https://ropsten.infura.io/v3/da25855c27944fe18ab683a220251c78";
+var url = "";
 
 const web3 = new Web3(new Web3.providers.HttpProvider(url));
 
-const account1 = "0xaB7B7915a58ec33aC3c6fA1825a0115101C62E7A";
+const account1 = "";
 
 const privateKey =
-  "fee069363ad9780e2121c3d3fb987ecb268c3177a17b64586a8ccc6c18b9f864";
+  "";
 const privateKey1 = Buffer.from(privateKey, "hex");
 
 web3.eth.defaultAccount = account1;
@@ -147,7 +147,7 @@ const ABI = [
 		"type": "function"
 	}
 ]
-const contractAddr = "0x3fe7ca7693317dd13271ae2ecca9a7612b4eface"; //"0xc923d0a1c467651d8076bcb8052f7fbfdd0f903b";
+const contractAddr = ""; 
 const contract = new web3.eth.Contract(ABI, contractAddr);
 app.get("/", async (req, res) => {
   fs.readFile("index2.html", function(err, data) {
